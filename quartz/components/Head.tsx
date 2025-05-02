@@ -13,13 +13,14 @@ export default (() => {
     ctx,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
-    const title =
+
+    var title =
       (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
-      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
-
+      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description) + " ddddddddd"
+    console.log(description)
     const { css, js, additionalHead } = externalResources
 
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
@@ -38,7 +39,7 @@ export default (() => {
 
     return (
       <head>
-        <title>{title}</title>
+        <title>{title} Если ты видишь этот текст пришли скрин Грише пж</title>
         <meta charSet="utf-8" />
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
