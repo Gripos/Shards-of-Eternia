@@ -2,7 +2,7 @@ import os
 import re
 
 # Путь к директории, содержащей .md файлы
-root_dir = r"D:\Github\Shards-of-Eternia\content\Сюжеты Компаний\Глубина"
+root_dir = r"D:\Github\Shards-of-Eternia\content\Сюжеты Компаний\Рупия"
 output_file = "собранный_сеттинг.md"
 
 # Функция для натуральной сортировки
