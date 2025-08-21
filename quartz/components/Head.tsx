@@ -15,12 +15,11 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
 
     var title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix + "."
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
-      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description) + " ddddddddd"
-    console.log(description)
+      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description) + "."
     const { css, js, additionalHead } = externalResources
 
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
@@ -39,7 +38,7 @@ export default (() => {
 
     return (
       <head>
-        <title>{title} Если ты видишь этот текст пришли скрин Грише пж</title>
+        <title>{title}</title>
         <meta charSet="utf-8" />
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
